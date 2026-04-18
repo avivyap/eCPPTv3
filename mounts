@@ -1,0 +1,13 @@
+No credentials
+----
+
+`mount -t cifs //ip/directory /location/on/our/team`
+
+With credentials
+----
+`mount -t cifs //ip/directory /location/on/out/team -o username=user, password=pass,domain=info.local,rw`
+
+Unmount
+----
+`sudo unmount /route/`
+
