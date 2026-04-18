@@ -1,0 +1,3 @@
+# Previously, we perform a Kerberoasting attack and ASREPRoast Attack
+
+sudo ntpdate ip
