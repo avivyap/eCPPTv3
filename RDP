@@ -1,0 +1,3 @@
+how to connect to a machine via RDP
+
+  rdesktop ip -u 'user' -p 'pass'
