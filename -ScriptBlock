@@ -1,0 +1,17 @@
+Esto es una manera de poder ejecutar comandos como otro usuario sin necesidad de tener que estar usando runas, runascs ni mierdas de esas
+
+Definimos un usuario 
+
+	$user = 'dominio\usuario'
+
+Definimos su contraseña 
+
+	$password = Converto-SecureString 'contraseña' -AsPlainText -Force
+
+Nos creamos la credencial
+
+`$cred = New-Object System.Management.PSCredential($user,$password)`
+
+Y por ultimo jugamos con Invoke-Command
+
+	Invoke-Command -ComputerName nombre -Credential $cred -ScriptBlock { whoami }
