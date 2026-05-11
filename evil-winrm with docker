@@ -1,0 +1,1 @@
+docker run --rm -ti -name evil-winrm oscarakaelvis/evil-winrm -i 'target-ip' -u 'username' -p 'password'
