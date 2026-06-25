@@ -10,7 +10,7 @@ Definimos su contraseña
 
 Nos creamos la credencial
 
-`$cred = New-Object System.Management.PSCredential($user,$password)`
+	$cred = New-Object System.Management.PSCredential($user,$password)
 
 Y por ultimo jugamos con Invoke-Command
 
